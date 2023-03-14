@@ -1,3 +1,22 @@
+let playerName = "";
+let validRound = 0;
+
+function playerIntroduction() {
+    playerName = prompt("Please enter your name!");
+    if((playerName == null ) || (playerName.trim() == "")) {
+        alert("Oops...Please enter your name to continue!");
+        validRound = 5;
+        gameOver(2);
+    } else {
+        playerName = playerName.trim();
+        let firstLetter = playerName.charAt(0).toUpperCase();
+        playerName = firstLetter + playerName.slice(1);
+        alert(`Let's get started, ${playerName}!`);
+    }
+}
+
+playerIntroduction();
+
 const options = ["rock", "paper", "scissors"];
 
 function computerPlay() {
@@ -55,6 +74,7 @@ function game() {
     let scorecomputer = 0;
     console.log("Welcome!")
     for (let i=0; i < 5; i++) {
+        console.log(`Round ${i+1}`);
         const playerSelection = playerPlay();
         const computerSelection = computerPlay();
         console.log(playRound(playerSelection, computerSelection));

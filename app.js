@@ -61,7 +61,7 @@ function playerPlay() {
         if(choice == null) {
             while(true) {
                     let endGame = prompt("Are u sure you're leaving? Type in (Y or N)");
-                    if (endGame == null || endGame == 'Y' || endGame == 'y') {
+                    if (endGame == 'Y' || endGame == 'y') {
                         location.reload();
                     } else if (endGame == 'n' || endGame == 'N'){
                         break;

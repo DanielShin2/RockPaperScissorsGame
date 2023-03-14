@@ -59,6 +59,16 @@ function playerPlay() {
     while(validatedInput == false) {
         const choice = prompt("Rock Paper Scissors");
         if(choice == null) {
+            while(true) {
+                    let endGame = prompt("Are u sure you're leaving? Type in (Y or N)");
+                    if (endGame == null || endGame == 'Y' || endGame == 'y') {
+                        location.reload();
+                    } else if (endGame == 'n' || endGame == 'N'){
+                        break;
+                    } else {
+                        console.log("Please write Y/y to end the game or N/n to continue playing")
+                    }
+                }
             continue;
         }
         const choiceInLower = choice.toLocaleLowerCase();
